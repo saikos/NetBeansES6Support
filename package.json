@@ -1,0 +1,25 @@
+{
+  "name": "NetBeansES6Support",
+  "version": "1.0.0",
+  "keywords": [
+    "ecmascript",
+    "netbeans"
+  ],
+  "author": "saiko",
+  "description": "Demonstrate NetBeans support of EcmaScript 6",
+  "license": "CC-BY-SA-4.0",
+  "private": true,
+  "scripts": {
+    "build": "babel src --presets=es2015 -d build",
+    "dist": "webpack build/main.js public_html/js/dist.js"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-preset-es2015": "^6.24.1",    
+    "webpack": "^2.4.1"
+  },
+  "dependencies": {
+    "knockout": "^3.4.2",
+    "lodash": "^4.17.4"
+  }
+}

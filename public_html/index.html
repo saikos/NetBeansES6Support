@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>NetBeans Support for ES6</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/bootstrap.min.css">  
+    </head>
+    <body>
+        <div class="container">
+            
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="page-header">
+                        <h2 class="text-danger">Simple Shapes</h2>
+                    </div>
+                </div>
+            </div>
+            
+            
+            <div class="row">
+                <div class="col-sm-6">
+                    <h3>Circle</h3>
+                    <div>
+                        Radius: <span data-bind="text:circle.radius"></span>
+                    </div>                    
+                    <div>
+                        Area: <span data-bind="text:circle.area()"></span>
+                    </div>
+                </div>
+            
+                <div class="col-sm-6">
+                    <h3>Square</h3>
+                    <div>
+                        Side: <span data-bind="text:square.side"></span>
+                    </div>                    
+                    <div>
+                        Area: <span data-bind="text:square.area()"></span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="page-header">
+                        <h2 class="text-success">Live Shapes</h2>
+                    </div>
+                </div>
+            </div>
+            
+            
+            <div class="row">
+                <div class="col-sm-6">
+                    <h3>Live Circle</h3>
+                    <div>
+                        Radius: <input type="text" data-bind="textInput:liveCircle.radius">
+                    </div>                    
+                    <div>
+                        Area: <span data-bind="text:liveCircle.area()"></span>
+                    </div>
+                </div>
+                
+                <div class="col-sm-6">
+                    <h3>Live Square</h3>
+                    <div>
+                        Side: <input type="text" data-bind="textInput:liveSquare.side">
+                    </div>                    
+                    <div>
+                        Area: <span data-bind="text:liveSquare.area()"></span>
+                    </div>
+                </div>
+            </div>
+            
+            
+            <div class="row" data-bind="with:datasets">
+                <div class="col-sm-12">
+                    <div class="page-header">
+                        <div class="pull-right">
+                            <a class="btn btn-success" data-bind="click:load">Load</a>
+                        </div>
+                        <h2><a href="http://www.opendatacloud.gr">OpenDataCloud</a> DataSets</h2>
+                    </div>
+                </div>
+                
+                <div class="col-sm-12">
+                    <table class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Title</th>
+                                <th>Records</th>
+                            </tr>
+                        </thead>
+                        <tbody data-bind="foreach:list">
+                            <tr>
+                                <td>
+                                    <span data-bind="text:$index() + 1"></span>
+                                </td>
+                                <td>
+                                    <a data-bind="attr:{href: 'http://www.opendatacloud.gr/dataset.html?id=' + id}">
+                                        <span data-bind="text:title"></span>
+                                    </a>
+                                </td>
+                                <td>
+                                    <span data-bind="text:records"></span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+        </div>
+        
+        <script src="js/jquery-2.1.4.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>      
+        <script src="js/dist.js"></script>
+    </body>
+</html>

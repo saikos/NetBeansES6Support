@@ -1,0 +1,5 @@
+*~
+*.swp
+/build
+/nbproject
+/node_modules
